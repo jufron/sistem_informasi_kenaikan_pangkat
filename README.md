@@ -58,10 +58,16 @@ Jalankan aplikasi:
 php artisan serve
 ```
 ## Tampilan
-
+Halaman Utama :
 ![Halaman Utama](screenshot/landing_page.png)
+
+Halaman Dashboard Admin :
 ![Halaman Dashboard Admin](screenshot/dashboard_admin.png)
+
+Halaman Dashboard Sekertaris :
 ![Halaman Dashboard Sekertaris](screenshot/dashboard_sekertaris.png)
+
+Halaman Dashboard Kasubang :
 ![Halaman Dashboard Kasubang](screenshot/dashboard_kasubang.png)
 
 ## License
