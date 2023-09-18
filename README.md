@@ -1,8 +1,16 @@
 
+# Aplikasi Kenaikan Pangkat
+
 ## Penjelasan
 
 Aplikasi Kenaikan Pangkat Pegawai Berbasis Web
 Aplikasi ini merupakan aplikasi web yang digunakan untuk mengelola kenaikan pangkat pegawai. Aplikasi ini dibangun menggunakan framework Laravel versi 10, PHP versi 8, Bootstrap versi 5, dan Fontawesome.
+
+## Fitur
+
+* Pengguna dapat mengajukan kenaikan pangkat dengan mengisi formulir online.
+* Pegawai yang mengajukan kenaikan pangkat dapat memantau status pengajuan kenaikan pangkatnya.
+* Pegawai yang mengajukan kenaikan pangkat dapat melihat riwayat kenaikan pangkatnya.
 
 ## Prasyarat 
 
@@ -49,20 +57,12 @@ Jalankan aplikasi:
 ```bash
 php artisan serve
 ```
+## Tampilan
 
-# Aplikasi Kenaikan Pangkat
-
-Aplikasi kenaikan pangkat berbasis web yang dibangun menggunakan framework Laravel. Aplikasi ini memungkinkan pengguna untuk mengajukan kenaikan pangkat, memantau status pengajuan kenaikan pangkat, dan melihat riwayat kenaikan pangkat.
-
-## Fitur
-
-* Pengguna dapat mengajukan kenaikan pangkat dengan mengisi formulir online.
-* Pegawai yang mengajukan kenaikan pangkat dapat memantau status pengajuan kenaikan pangkatnya.
-* Pegawai yang mengajukan kenaikan pangkat dapat melihat riwayat kenaikan pangkatnya.
-
-## Instalasi
-
-Untuk menginstal aplikasi ini, Anda perlu memiliki Laravel yang terinstal di komputer Anda. Setelah Laravel terinstal, Anda dapat menjalankan perintah berikut untuk menginstal aplikasi:
+![Halaman Utama](screenshot/landing_page.png)
+![Halaman Dashboard Admin](screenshot/dashboard_admin.png)
+![Halaman Dashboard Sekertaris](screenshot/dashboard_sekertaris.png)
+![Halaman Dashboard Kasubang](screenshot/dashboard_kasubang.png)
 
 ## License
 
