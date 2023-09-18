@@ -15,27 +15,40 @@ Git
 ## Instalasi
 
 Clone repository ini ke komputer Anda:
+```bash
 git clone https://github.com/[nama-pengguna]/aplikasi-kenaikan-pangkat-pegawai.git
-
-Masuk ke direktori aplikasi:
+```
 cd aplikasi-kenaikan-pangkat-pegawai
+```bash
+Masuk ke direktori aplikasi:
+```
 
 Instal dependensi:
+```bash
 composer install
+```
 
 Buat database baru:
+```bash
 mysql -u [nama-user] -p -e "CREATE DATABASE aplikasi_kenaikan_pangkat"
+```
 
 Konfigurasi database:
+```bash
 cp .env.example .env
+```
+
 Edit file .env dan ubah pengaturan database sesuai dengan konfigurasi Anda.
 
 Migrasi database:
+```bash
 php artisan migrate
+```
 
 Jalankan aplikasi:
+```bash
 php artisan serve
-Aplikasi akan berjalan di port 8000. Anda dapat mengaksesnya di http://localhost:8000: http://localhost:8000.
+```
 
 # Aplikasi Kenaikan Pangkat
 
