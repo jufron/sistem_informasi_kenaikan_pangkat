@@ -36,20 +36,28 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
 
-             // Mengalihkan pengguna berdasarkan peran setelah autentikasi
-            // Route::middleware(['web', 'auth'])->group(function () {
-            //     $user = auth()->user();
+            Route::middleware('web', 'auth')->group( function () {
 
-            //     if ($user && $user->role === 'super_admin') {
-            //         Route::get('/home', 'SuperAdminController@index')->name('home');
-            //     } elseif ($user && $user->role === 'sekertaris') {
-            //         Route::get('/home', 'SekertarisController@index')->name('home');
-            //     } elseif ($user && $user->role === 'kasubang') {
-            //         Route::get('/home', 'KasubangController@index')->name('home');
-            //     } else {
-            //         Route::get('/home', 'HomeController@index')->name('home');
-            //     }
-            // });
+                Route::prefix('dashboard/pegawai')
+                     ->middleware('rolle:pegawai')
+                     ->group(base_path('routes/dashboard/pegawai.php'));
+
+                Route::prefix('dashboard/staf_pegawai')
+                     ->middleware('rolle:staf_pegawai')
+                     ->group(base_path('routes/dashboard/staf_pegawai.php'));
+
+                Route::prefix('dashboard/kasubag')
+                     ->middleware('rolle:kasubag')
+                     ->group(base_path('routes/dashboard/kasubag.php'));
+
+                Route::prefix('dashboard/sekertaris')
+                     ->middleware('rolle:sekertaris')
+                     ->group(base_path('routes/dashboard/sekertaris.php'));
+
+                ROute::prefix('dashboard/pimpinan')
+                     ->middleware('rolle:pimpinan')
+                    ->group(base_path('routes/dashboard/pimpinan.php'));
+            });
 
         });
     }

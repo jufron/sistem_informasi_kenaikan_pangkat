@@ -52,10 +52,10 @@
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>disetujui</h4>
+            <h4>Catatan Usulan</h4>
           </div>
           <div class="card-body">
-            {{ $disetujui }}
+            {{ $catatan_usulan }}
           </div>
         </div>
       </div>
@@ -67,10 +67,10 @@
         </div>
         <div class="card-wrap">
           <div class="card-header">
-            <h4>Mengajukan</h4>
+            <h4>Disposisi</h4>
           </div>
           <div class="card-body">
-            {{ $mengajukan }}
+            {{ $disposisi }}
           </div>
         </div>
       </div>

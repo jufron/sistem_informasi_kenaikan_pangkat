@@ -23,5 +23,9 @@ class AppServiceProvider extends ServiceProvider
         Blade::if('rolle', function (string $value) {
             return auth()->user()->rolle === $value;
         });
+
+        Blade::if('routeis', function (string $value) {
+            return  request()->routeIs($value);
+        });
     }
 }

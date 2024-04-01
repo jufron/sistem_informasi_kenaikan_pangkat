@@ -14,15 +14,9 @@ class PegawaiController extends Controller
     public function index (): View
     {
       $pegawai = Pegawai::with([
-                  'jabatan'       => function (BelongsTo $query) {
-                      $query->select(['id', 'nama']);
-                  },
-                  'golongan'      => function (BelongsTo $query) {
-                      $query->select(['id', 'nama']);
-                  }
-                  ,'unitKerja'    => function (BelongsTo $query) {
-                      $query->select(['id', 'nama']);
-                  }
+                  'jabatan'    => fn (BelongsTo $query) => $query->select(['id', 'nama']),
+                  'golongan'   => fn (BelongsTo $query) => $query->select(['id', 'nama']),
+                  'unitKerja'  => fn (BelongsTo $query) => $query->select(['id', 'nama'])
               ])
                 ->select(['id', 'foto', 'nama_lengkap', 'jabatan_id', 'golongan_id', 'unit_kerja_id'])
                 ->latest()
@@ -34,18 +28,10 @@ class PegawaiController extends Controller
     public function show (Pegawai $pegawai)
     {
         $pegawai->load([
-            'agama'         => function (BelongsTo $query) {
-                $query->select(['id', 'nama']);
-            }, 
-            'jabatan'       => function (BelongsTo $query) {
-                $query->select(['id', 'nama']);
-            }, 
-            'unitKerja'     => function (BelongsTo $query) {
-                $query->select(['id', 'nama']);
-            }, 
-            'golongan'      => function (BelongsTo $query) {
-                $query->select(['id', 'nama']);
-            }
+            'agama'     => fn (BelongsTo $query) => $query->select(['id', 'nama']),
+            'jabatan'   => fn (BelongsTo $query) => $query->select(['id', 'nama']),
+            'unitKerja' => fn (BelongsTo $query) => $query->select(['id', 'nama']),
+            'golongan'  => fn (BelongsTo $query) => $query->select(['id', 'nama'])
         ]);
         return response()->json([
             'pegawai'       => $pegawai,

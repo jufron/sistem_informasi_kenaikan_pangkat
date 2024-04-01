@@ -66,32 +66,34 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-12">
-      <div class="card card-statistic-2">
-        <div class="card-icon shadow-primary bg-primary">
-          <i class="fas fa-file-alt"></i>
-        </div>
-        <div class="card-wrap">
-          <div class="card-header">
-            <h4>Pengajuan</h4>
+    <div class="col-md-6">
+      <div class="col-md-12 col-sm-12">
+        <div class="card card-statistic-2">
+          <div class="card-icon shadow-primary bg-primary">
+            <i class="fas fa-user-tie"></i>
           </div>
-          <div class="card-body">
-            {{ $mengajukan }}
+          <div class="card-wrap">
+            <div class="card-header">
+              <h4>SK Kenaikan Pangkat</h4>
+            </div>
+            <div class="card-body">
+              {{ $sk_pangkat }}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-lg-4 col-md-4 col-sm-12">
-      <div class="card card-statistic-2">
-        <div class="card-icon shadow-primary bg-primary">
-          <i class="fas fa-file-alt"></i>
-        </div>
-        <div class="card-wrap">
-          <div class="card-header">
-            <h4>disetujui</h4>
+      <div class="col-md-12 col-sm-12">
+        <div class="card card-statistic-2">
+          <div class="card-icon shadow-primary bg-primary">
+            <i class="fas fa-user-tie"></i>
           </div>
-          <div class="card-body">
-            {{ $disetujui }}
+          <div class="card-wrap">
+            <div class="card-header">
+              <h4>Disposisi</h4>
+            </div>
+            <div class="card-body">
+              {{ $disposisi }}
+            </div>
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Pegawai extends Model
 {
@@ -73,5 +74,20 @@ class Pegawai extends Model
     public function kenaikan_pangkat(): BelongsToMany
     {
         return $this->belongsToMany(KenaikanPangkat::class, 'kenaikan_pangkat_pegawai')->withTimestamps();
+    }
+
+    public function catatanUsulan (): HasMany
+    {
+        return $this->hasMany(CatatanUsulan::class);
+    }
+
+    public function disposisi (): HasMany
+    {
+        return $this->hasMany(Disposisi::class);
+    }
+
+    public function sk_kenaikan_pangkat (): HasMany
+    {
+        return $this->hasMany(SkKenaikanPangkat::class);
     }
 }

@@ -14,13 +14,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if (auth()->user()->rolle === 'super_admin') {
-            return redirect()->route('dashboard.admin');
+        if (auth()->user()->rolle === 'pimpinan') {
+            return redirect()->route('dashboard.pimpinan');
         } else if (auth()->user()->rolle === 'sekertaris') {
             return redirect()->route('dashboard.sekertaris');
-        } else if (auth()->user()->rolle === 'kasubang') {
-            return redirect()->route('dashboard.kasubang');
-        } else {
+        } else if (auth()->user()->rolle === 'kasubag') {
+            return redirect()->route('dashboard.kasubag');
+        } else if (auth()->user()->rolle === 'staf_pegawai') {
+            return redirect()->route('dashboard.staf_pegawai');
+        } else if (auth()->user()->rolle === 'pegawai') {
+            return redirect()->route('dashboard.pegawai');
+        }else {
             abort(403);
         }
     }

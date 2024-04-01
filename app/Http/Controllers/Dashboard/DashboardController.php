@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\{
+    CatatanUsulan,
+    Disposisi,
     Golongan,
     Jabatan,
     KenaikanPangkat,
     Pegawai,
+    SkKenaikanPangkat,
     UnitKerja
 };
 
@@ -35,7 +38,7 @@ class DashboardController extends Controller
         return Pegawai::where('pendidikan_terakhir', $value)->count();
     }
 
-    public function admin (): View
+    public function pimpinan (): View
     {
         $kristen_protestan = $this->pegawaiWhereAgama('kristen protestan');
         $katholik = $this->pegawaiWhereAgama('katholik');
@@ -75,8 +78,9 @@ class DashboardController extends Controller
             "d4"                  => $this->pegawaiWherePendidikanTerakhir('D4'),
             "s2"                  => $this->pegawaiWherePendidikanTerakhir('S2'),
             "s1"                  => $this->pegawaiWherePendidikanTerakhir('S1'),
-            'mengajukan'          => KenaikanPangkat::whereIn('disetujui_kasubang', [1, 0])->count(),
-            'disetujui'           => KenaikanPangkat::where('disetujui_atasan', 1)->count()
+            'mengajukan'          => KenaikanPangkat::whereIn('disetujui_staf_pegawai', [1, 0])->count(),
+            'sk_pangkat'          => SkKenaikanPangkat::count(),
+            'disposisi'           => Disposisi::count()
         ]);
     }
 
@@ -90,14 +94,32 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function kasubang (): View
+    public function kasubag (): View
     {
         return view('dashboard.kasubang.index', [
             'pegawai_count'     => Pegawai::count(),
             'laki_laki_count'   => Pegawai::where('jenis_kelamin', 'laki-laki')->count(),
             'perempuan_count'   => Pegawai::where('jenis_kelamin', 'perempuan')->count(),
-            'disetujui'         => KenaikanPangkat::where('disetujui_atasan', 1)->count(),
-            'mengajukan'        => KenaikanPangkat::whereIn('disetujui_kasubang', [1, 0])->count(),
+            'catatan_usulan'    => CatatanUsulan::count(),
+            'disposisi'         => Disposisi::count(),
+        ]);
+    }
+
+    public function staf_pegawai ()
+    {
+        return view('dashboard.staf_pegawai.index', [
+            'pegawai'             => Pegawai::count(),
+            'disetujui'           => KenaikanPangkat::where('disetujui_staf_pegawai', 1)->count(),
+            'catatan_usulan'      => CatatanUsulan::count()
+        ]);
+    }
+
+    public function pegawai (): View
+    {
+        return view('dashboard.pegawai.index', [
+            'pegawai'               => Pegawai::count(),
+            'usul_kenaikan_pangkat' => KenaikanPangkat::whereIn('disetujui_staf_pegawai', [1, 0])->count(),
+            'disetujui'             => KenaikanPangkat::where('disetujui_staf_pegawai', 1)->count()
         ]);
     }
 }

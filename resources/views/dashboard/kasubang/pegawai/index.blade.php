@@ -53,9 +53,9 @@
                 <x-button-link href="{{ route('kasubang.pegawai.edit', $peg) }}" className="btn btn-warning mx-1 my-1 btn-sm">
                   <i class="fa-solid fa-pen-to-square"></i>
                 </x-button-link>
-                <x-button type-button="submit" class-name="btn btn-danger btn-sm" modal="false">
+                {{-- <x-button type-button="submit" class-name="btn btn-danger btn-sm" modal="false">
                   <i class="fa-regular fa-trash-can"></i>
-                </x-button>
+                </x-button> --}}
               </form>
             </td>
           </tr>

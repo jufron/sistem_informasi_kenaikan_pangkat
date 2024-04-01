@@ -35,9 +35,7 @@ class KenaikanPangkat extends Model
 
         'pangkat_lama',
         'pangkat_baru',
-        'disetujui_kasubang',
-        'disetujui_sekertaris',
-        'disetujui_atasan'
+        'disetujui_staf_pegawai'
     ];
 
     // model kenaikan_pangkat

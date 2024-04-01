@@ -5,6 +5,13 @@
     <meta charset="utf-8">
     <title>login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('icon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('icon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('icon/favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('icon/android-chrome-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('icon/android-chrome-512x512.png') }}">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
         body {
@@ -81,8 +88,11 @@
                                     <div class="mb-5">
                                         <h3 class="h4 font-weight-bold text-theme">Login</h3>
                                     </div>
-                                    <h6 class="h5 mb-0">Selamat Datang!</h6>
-                                    <p class="text-muted mt-2 mb-5">Silahkan masukan email dan password sebelum masuk dashboard</p>
+                                    <div class="row justify-content-center">
+                                      <div class="col-md-6 text-center">
+                                        <img src="{{ asset('img/asadadasdsa.png') }}" class="img-fluid" alt="logo">
+                                      </div>
+                                    </div>
                                     <form action="{{ route('login') }}" method="POST">
                                       @csrf
                                         <div class="form-group">
