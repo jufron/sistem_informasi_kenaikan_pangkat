@@ -1,0 +1,26 @@
+rolle user
+
+login user
+email : pimpinan@gmail.com
+password : pimpinan
+
+email : kasubag@gmail.com
+password : kasubag
+
+email : staf_pegawai@gmail.com
+password : staf_pegawai
+
+email : pegawai@gmail.com
+password : pegawai
+
+instuksi 
+
+1. pastikan menggunakan versi xampp 8.1.17 / PHP 8.1.17  atau lebih tinggi
+2. masuk ke http://localhost/phpmyadmin untuk seting database terlebih dahulu
+3. buat database baru dengan nama kenaikan_pangkat (huruf kecil semua)
+4. setelah berhasil membuat database ke menu impor lalu import file sql kenaikan_pangkat.sql
+5. setelah berhasil seting database copy folder applikasi_pengajuan_kenaikan_pangkat
+6. copy ke dalam directory xampp C:\xampp\htdocs lalu paste di dalam htdocs
+7. lalu buka browser dan jalankan aplikasi dengan url : http://localhost/applikasi_pengajuan_kenaikan_pangkat/public/
+8. done
+
