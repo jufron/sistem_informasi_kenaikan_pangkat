@@ -7,7 +7,7 @@
   </form>
   <ul class="navbar-nav navbar-right">
     <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-      @if (auth()->user()->avatar)
+      @if (auth()->user()->avatar && Storage::disk('public')->exists(auth()->user()->avatar))
         <img alt="image" src="{{ asset('storage/'.auth()->user()->avatar) }}" class="rounded-circle mr-1">
       @else
         <img alt="image" src="{{ asset('assets/img/avatar/avatar-1.png') }}" class="rounded-circle mr-1">
